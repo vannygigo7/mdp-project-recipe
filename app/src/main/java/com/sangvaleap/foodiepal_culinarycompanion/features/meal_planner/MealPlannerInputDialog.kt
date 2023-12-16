@@ -23,22 +23,22 @@ class MealPlannerInputDialog(context: Context, private val listener: OnSubmitCli
 
         val day = view.findViewById<EditText>(R.id.etDay)
         val meal = view.findViewById<EditText>(R.id.etMeal)
-        val btnAdd = view.findViewById<Button>(R.id.btnAdd)
 
+        val btnAdd = view.findViewById<Button>(R.id.btnAdd)
         btnAdd.setOnClickListener {
             onAdd(day.text.toString(), meal.text.toString())
         }
+
+        val btnCancel = view.findViewById<Button>(R.id.btnCancel)
+        btnCancel.setOnClickListener {
+            dismiss()
+        }
+
         return  view;
     }
 
     override fun onStart() {
         super.onStart()
-
-        // Set dialog width and height to match parent (full-screen)
-//        dialog?.window?.setLayout(
-//            ViewGroup.LayoutParams.MATCH_PARENT,
-//            ViewGroup.LayoutParams.MATCH_PARENT
-//        )
     }
 
     private fun onAdd(day: String, meal: String){

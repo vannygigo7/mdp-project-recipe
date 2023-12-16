@@ -23,20 +23,22 @@ class BlogPostInputDialog(context: Context, private val listener: OnSubmitClickL
 
         val caption = view.findViewById<EditText>(R.id.etCaption)
         val content = view.findViewById<EditText>(R.id.etContent)
-        val btnAdd = view.findViewById<Button>(R.id.btnAdd)
 
-        btnAdd.setOnClickListener { onAdd(caption.text.toString(), content.text.toString()) }
+        val btnAdd = view.findViewById<Button>(R.id.btnAdd)
+        btnAdd.setOnClickListener {
+            onAdd(caption.text.toString(), content.text.toString())
+        }
+
+        val btnCancel = view.findViewById<Button>(R.id.btnCancel)
+        btnCancel.setOnClickListener {
+            dismiss()
+        }
+
         return  view;
     }
 
     override fun onStart() {
         super.onStart()
-
-        // Set dialog width and height to match parent (full-screen)
-//        dialog?.window?.setLayout(
-//            ViewGroup.LayoutParams.MATCH_PARENT,
-//            ViewGroup.LayoutParams.MATCH_PARENT
-//        )
     }
 
     private fun onAdd(caption: String, content: String){
@@ -44,7 +46,6 @@ class BlogPostInputDialog(context: Context, private val listener: OnSubmitClickL
         listener.onSubmit(caption, content)
         dismiss()
     }
-
 
     private fun validateForm(caption: String, content: String): Boolean{
         return !( caption.isEmpty() || content.isEmpty())

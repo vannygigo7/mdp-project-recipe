@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="30px">
+    android:padding="25dp">
 
     <TextView
-        android:text="Add new recipe"
-        android:textSize="20dp"
+        android:text="Add recipe"
+        android:textSize="25dp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/etRecipeName"
-        android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
         android:hint="Recipe Name"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textSize="15dp"
+        tools:ignore="TextSizeCheck" />
 
     <EditText
         android:id="@+id/etIngredients"
-        android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
         android:hint="Ingredients"
         android:minHeight="48dp"
-         />
+        android:textSize="15dp"
+        tools:ignore="TextSizeCheck" />
 
     <EditText
         android:id="@+id/etInstruction"
@@ -35,12 +40,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Instruction"
+        android:textSize="15sp"
         android:minHeight="48dp" />
 
-    <Button
-        android:id="@+id/btnAdd"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_marginTop="30px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add"/>
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:backgroundTint="@color/grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"/>
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Add"/>
+    </LinearLayout>
+
 </LinearLayout>

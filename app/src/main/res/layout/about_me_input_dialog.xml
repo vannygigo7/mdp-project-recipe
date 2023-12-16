@@ -1,46 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="30px">
+    android:padding="25dp">
 
     <TextView
         android:text="Update your details"
-        android:textSize="20dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/etJourney"
-        android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
         android:hint="Culinary journey"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textSize="15dp"
+        tools:ignore="TextSizeCheck" />
 
     <EditText
         android:id="@+id/etFavRecipes"
-        android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
         android:hint="Favorite recipes"
         android:minHeight="48dp"
-         />
+        android:textSize="15dp"
+        tools:ignore="TextSizeCheck" />
 
     <EditText
         android:id="@+id/etFoodPhilosophy"
-        android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
         android:hint="Food philosophy"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textSize="15dp"
+        tools:ignore="TextSizeCheck" />
 
-    <Button
-        android:id="@+id/btnSave"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_marginTop="30px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save"/>
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:backgroundTint="@color/grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"/>
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"/>
+    </LinearLayout>
 </LinearLayout>

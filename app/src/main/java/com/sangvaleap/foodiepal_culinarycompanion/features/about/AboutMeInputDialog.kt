@@ -24,20 +24,22 @@ class AboutMeInputDialog(context: Context, private val listener: OnSubmitClickLi
         val journey = view.findViewById<EditText>(R.id.etJourney)
         val favRecipes = view.findViewById<EditText>(R.id.etFavRecipes)
         val foodPhilosophy = view.findViewById<EditText>(R.id.etFoodPhilosophy)
-        val btnSave = view.findViewById<Button>(R.id.btnSave)
 
-        btnSave.setOnClickListener { onAdd(journey.text.trim().toString(), favRecipes.text.trim().toString(), foodPhilosophy.text.trim().toString()) }
+        val btnSave = view.findViewById<Button>(R.id.btnSave)
+        btnSave.setOnClickListener {
+            onAdd(journey.text.trim().toString(), favRecipes.text.trim().toString(), foodPhilosophy.text.trim().toString())
+        }
+
+        val btnCancel = view.findViewById<Button>(R.id.btnCancel)
+        btnCancel.setOnClickListener {
+            dismiss()
+        }
+
         return  view;
     }
 
     override fun onStart() {
         super.onStart()
-
-        // Set dialog width and height to match parent (full-screen)
-//        dialog?.window?.setLayout(
-//            ViewGroup.LayoutParams.MATCH_PARENT,
-//            ViewGroup.LayoutParams.MATCH_PARENT
-//        )
     }
 
     private fun onAdd(journey: String, favRecipes: String, foodPhilosophy: String){

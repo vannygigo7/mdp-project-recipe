@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.sangvaleap.foodiepal_culinarycompanion.R
 
 class RecipeInputDialog(context: Context, private val listener: OnSubmitClickListener) : Dialog(context) {
@@ -20,13 +21,18 @@ class RecipeInputDialog(context: Context, private val listener: OnSubmitClickLis
         val recipeName: EditText = findViewById(R.id.etRecipeName)
         val ingredients: EditText = findViewById(R.id.etIngredients)
         val instruction: EditText = findViewById(R.id.etInstruction)
-        val btnAdd: Button = findViewById(R.id.btnAdd)
 
+        val btnAdd: Button = findViewById(R.id.btnAdd)
         btnAdd.setOnClickListener {
             val name = recipeName.text.toString()
             val ingredients = ingredients.text.toString()
             val instruction = instruction.text.toString()
             onAdd(name, ingredients, instruction)
+        }
+
+        val btnCancel = findViewById<Button>(R.id.btnCancel)
+        btnCancel.setOnClickListener {
+            dismiss()
         }
     }
 
