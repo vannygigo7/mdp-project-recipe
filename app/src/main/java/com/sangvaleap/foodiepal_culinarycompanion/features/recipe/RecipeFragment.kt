@@ -1,4 +1,4 @@
-package com.sangvaleap.foodiepal_culinarycompanion
+package com.sangvaleap.foodiepal_culinarycompanion.features.recipe
 
 import android.content.Context
 import android.os.Bundle
@@ -7,9 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.sangvaleap.foodiepal_culinarycompanion.R
+import com.sangvaleap.foodiepal_culinarycompanion.model.Recipe
 
 class RecipeFragment : Fragment() {
+
+    private var recipeList: ArrayList<Recipe> = arrayListOf(
+        Recipe("A", "a b c", "test", ""),
+        Recipe("B", "a b c d", "test2", ""),
+        Recipe("C", "a b c e", "test3", ""),
+        Recipe("D", "a b c f", "test4", ""),
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -27,6 +39,11 @@ class RecipeFragment : Fragment() {
         btnAdd.setOnClickListener {
             onAdd(context)
         }
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rvRecipe)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = RecipeAdapter(requireContext(), recipeList)
+
         return view;
     }
 

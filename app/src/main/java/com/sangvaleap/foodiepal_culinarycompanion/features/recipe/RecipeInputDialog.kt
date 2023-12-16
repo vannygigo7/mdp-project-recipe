@@ -1,10 +1,11 @@
-package com.sangvaleap.foodiepal_culinarycompanion
+package com.sangvaleap.foodiepal_culinarycompanion.features.recipe
 
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import com.sangvaleap.foodiepal_culinarycompanion.R
 
 class RecipeInputDialog(context: Context, private val listener: OnSubmitClickListener) : Dialog(context) {
 

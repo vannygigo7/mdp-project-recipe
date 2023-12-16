@@ -8,16 +8,24 @@
 
     <TextView
         android:text="Add meal planner"
-        android:textSize="40px"
+        android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
-        android:id="@+id/etTitle"
+        android:id="@+id/etDay"
         android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Title"
+        android:hint="Day"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etMeal"
+        android:layout_marginTop="30px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Meal"
         android:minHeight="48dp" />
 
     <Button

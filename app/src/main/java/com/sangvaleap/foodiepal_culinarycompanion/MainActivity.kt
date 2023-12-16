@@ -2,6 +2,7 @@ package com.sangvaleap.foodiepal_culinarycompanion
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.sangvaleap.foodiepal_culinarycompanion.databinding.ActivityMainBinding
@@ -35,5 +36,15 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }.attach()
+
+        binding.bottomNV.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.menuRecipe-> binding.vpager.currentItem = 0
+                R.id.menuMealPlanner-> binding.vpager.currentItem = 1
+                R.id.menuBlog-> binding.vpager.currentItem = 2
+            }
+            true
+        }
     }
+
 }

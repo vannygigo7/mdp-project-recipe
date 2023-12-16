@@ -1,4 +1,4 @@
-package com.sangvaleap.foodiepal_culinarycompanion
+package com.sangvaleap.foodiepal_culinarycompanion.features.meal_planner
 
 import android.content.Context
 import android.os.Bundle
@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.DialogFragment
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.sangvaleap.foodiepal_culinarycompanion.R
 
-class MealPlannerInputDialog(context: Context, private val listener: MealPlannerInputDialog.OnSubmitClickListener): DialogFragment() {
+class MealPlannerInputDialog(context: Context, private val listener: OnSubmitClickListener): DialogFragment() {
     interface OnSubmitClickListener {
-        fun onSubmit(title: String)
+        fun onSubmit(day: String, meal: String)
     }
 
     override fun onCreateView(
@@ -21,10 +21,11 @@ class MealPlannerInputDialog(context: Context, private val listener: MealPlanner
     ): View? {
         val view = inflater.inflate(R.layout.meal_planner_input_dailog, container, false)
 
-        val title = view.findViewById<EditText>(R.id.etTitle)
+        val day = view.findViewById<EditText>(R.id.etDay)
+        val meal = view.findViewById<EditText>(R.id.etDay)
         val btnAdd = view.findViewById<Button>(R.id.btnAdd)
 
-        btnAdd.setOnClickListener { onAdd(title.text.toString()) }
+        btnAdd.setOnClickListener { onAdd(day.text.toString(), day.text.toString()) }
         return  view;
     }
 
@@ -38,8 +39,8 @@ class MealPlannerInputDialog(context: Context, private val listener: MealPlanner
 //        )
     }
 
-    private fun onAdd(title: String){
-        listener.onSubmit(title)
+    private fun onAdd(day: String, meal: String){
+        listener.onSubmit(day, meal)
         dismiss()
     }
 }
