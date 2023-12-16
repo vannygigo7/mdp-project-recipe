@@ -1,4 +1,4 @@
-package com.sangvaleap.foodiepal_culinarycompanion.features.meal_planner
+package com.sangvaleap.foodiepal_culinarycompanion.features.blog
 
 import android.content.Context
 import android.os.Bundle
@@ -10,7 +10,7 @@ import android.widget.EditText
 import androidx.fragment.app.DialogFragment
 import com.sangvaleap.foodiepal_culinarycompanion.R
 
-class MealPlannerInputDialog(context: Context, private val listener: OnSubmitClickListener): DialogFragment() {
+class BlogPostInputDialog(context: Context, private val listener: OnSubmitClickListener): DialogFragment() {
     interface OnSubmitClickListener {
         fun onSubmit(day: String, meal: String)
     }
@@ -19,15 +19,13 @@ class MealPlannerInputDialog(context: Context, private val listener: OnSubmitCli
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.meal_planner_input_dailog, container, false)
+        val view = inflater.inflate(R.layout.blog_post_input_dailog, container, false)
 
-        val day = view.findViewById<EditText>(R.id.etDay)
-        val meal = view.findViewById<EditText>(R.id.etMeal)
+        val caption = view.findViewById<EditText>(R.id.etCaption)
+        val content = view.findViewById<EditText>(R.id.etContent)
         val btnAdd = view.findViewById<Button>(R.id.btnAdd)
 
-        btnAdd.setOnClickListener {
-            onAdd(day.text.toString(), meal.text.toString())
-        }
+        btnAdd.setOnClickListener { onAdd(caption.text.toString(), content.text.toString()) }
         return  view;
     }
 
@@ -41,13 +39,14 @@ class MealPlannerInputDialog(context: Context, private val listener: OnSubmitCli
 //        )
     }
 
-    private fun onAdd(day: String, meal: String){
-        if(!validateForm(day, meal)) return
-        listener.onSubmit(day, meal)
+    private fun onAdd(caption: String, content: String){
+        if(!validateForm(caption, content)) return
+        listener.onSubmit(caption, content)
         dismiss()
     }
 
-    private fun validateForm(day: String, meal: String): Boolean{
-       return !(day.isEmpty() || meal.isEmpty())
+
+    private fun validateForm(caption: String, content: String): Boolean{
+        return !( caption.isEmpty() || content.isEmpty())
     }
 }

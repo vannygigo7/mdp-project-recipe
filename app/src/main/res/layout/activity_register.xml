@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150px"
-        android:hint="first name"
+        android:hint="first name*"
         android:minHeight="48dp"
         app:layout_constraintTop_toBottomOf="@+id/tvLogin"
         tools:layout_editor_absoluteX="8dp" />
@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20px"
-        android:hint="last name"
+        android:hint="last name*"
         android:minHeight="48dp"
         app:layout_constraintTop_toBottomOf="@+id/etFirstName"
         tools:layout_editor_absoluteX="8dp" />
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20px"
-        android:hint="email"
+        android:hint="email*"
         android:minHeight="48dp"
         app:layout_constraintTop_toBottomOf="@+id/etLastName"
         tools:layout_editor_absoluteX="8dp" />
@@ -50,7 +50,7 @@
     <EditText
         android:id="@+id/etPassword"
         android:layout_marginTop="20px"
-        android:hint="password"
+        android:hint="password*"
         android:minHeight="48dp"
         app:layout_constraintTop_toBottomOf="@+id/etEmail"
         android:layout_width="match_parent"

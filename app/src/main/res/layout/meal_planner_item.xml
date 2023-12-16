@@ -5,11 +5,12 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="1dp"
-    android:layout_marginHorizontal="2dp">
+    android:layout_marginVertical="3dp"
+    android:layout_marginHorizontal="5dp">
 
     <LinearLayout
         android:orientation="horizontal"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -19,21 +20,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="15dp"
-            android:text="Title"/>
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
+            android:textStyle="bold"
+            android:text="Day"/>
 
         <TextView
             android:id="@+id/tvMPMeal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:textAlignment="textEnd"
-            android:text="Ingredients"/>
+            android:text="Meals"/>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

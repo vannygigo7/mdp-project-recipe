@@ -11,14 +11,12 @@ import com.sangvaleap.foodiepal_culinarycompanion.utils.AppConstants
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private var userList = arrayListOf(
-        User("John", "Doe", "john.doe@test.com", "123"),
-        User("Jane", "Doe", "jane.doe@test.com", "123"),
-        User("Bob", "Smith", "bob.smith@test.com", "123"),
-        User("Test", "User", "test@test.com", "123"),
-        User("Nani", "Luis", "nani.lius@test.com", "123"),
-        User("Kaka", "Ricardo", "kaka.r@test.com", "123")
-    )
+//    private var userList = arrayListOf(
+//        User("Sangvaleap", "Vanny", "sangvaleap@test.com", "123"),
+//        User("Jane", "Doe", "jane.doe@test.com", "123"),
+//        User("Bob", "Smith", "bob.smith@test.com", "123")
+//    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -41,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         val user = findUser()
+        println(user)
         if(user == null){
             Toast.makeText(this, "User doesn't exist", Toast.LENGTH_LONG).show()
         }else if( validateUser(user, email, password)){
@@ -70,6 +69,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun findUser(): User?{
         val userJson = readUserPreference()
+        println(userJson)
         return if(userJson != null) Gson().fromJson(userJson, User::class.java) else null;
     }
 

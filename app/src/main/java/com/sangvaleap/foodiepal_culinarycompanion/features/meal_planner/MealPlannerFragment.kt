@@ -13,11 +13,15 @@ import com.sangvaleap.foodiepal_culinarycompanion.R
 import com.sangvaleap.foodiepal_culinarycompanion.model.MealPlanner
 
 class MealPlannerFragment : Fragment() {
-    private var mealPlannerList: ArrayList<MealPlanner> = arrayListOf(
-        MealPlanner("A", "a b c"),
-        MealPlanner("B", "a b c d"),
-        MealPlanner("C", "a b c e"),
-        MealPlanner("D", "a b c f"),
+    private var mealPlanList: ArrayList<MealPlanner> = arrayListOf(
+        MealPlanner("Monday", """
+            Breakfast: bread and milk
+            Lunch: noodle and coffee""".trimIndent()),
+        MealPlanner("Tuesday", """
+            Breakfast: bread and milk
+            Lunch: noodle and coffee
+            Dinner: salad and milk
+        """.trimIndent()),
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,20 +37,24 @@ class MealPlannerFragment : Fragment() {
 
         val btnAdd = view.findViewById<FloatingActionButton>(R.id.fab)
         btnAdd.setOnClickListener {
-            println("MealPlannerFragment added")
-            MealPlannerInputDialog( requireContext(), object : MealPlannerInputDialog.OnSubmitClickListener{
-                override fun onSubmit(day: String, meal: String) {
-                    Toast.makeText(context, "day: $day, meal: $meal", Toast.LENGTH_SHORT).show()
-                }
-
-            } ).show(parentFragmentManager, "mealPlannerInputDialog")
+            onAdd()
         }
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvMealPlanner)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = MealPlannerAdapter(requireContext(), mealPlannerList)
+        recyclerView.adapter = MealPlannerAdapter(requireContext(), mealPlanList)
 
         return view;
+    }
+
+    private fun onAdd(){
+        MealPlannerInputDialog( requireContext(), object : MealPlannerInputDialog.OnSubmitClickListener{
+            override fun onSubmit(day: String, meal: String) {
+                mealPlanList.add(MealPlanner(day, meal))
+                Toast.makeText(context, "New meal plan was added", Toast.LENGTH_SHORT).show()
+            }
+
+        } ).show(parentFragmentManager, "MealPlannerInputDialog")
     }
 
 }

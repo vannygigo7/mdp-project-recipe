@@ -31,7 +31,12 @@ class RecipeInputDialog(context: Context, private val listener: OnSubmitClickLis
     }
 
     private fun onAdd(recipeName: String, ingredients: String, instruction: String){
+        if(!validateForm(recipeName, ingredients, instruction)) return
         listener.onSubmit(recipeName, ingredients, instruction)
         dismiss()
+    }
+
+    private fun validateForm(recipeName: String, ingredients: String, instruction: String): Boolean{
+        return !(recipeName.isEmpty() || ingredients.isEmpty() || instruction.isEmpty())
     }
 }

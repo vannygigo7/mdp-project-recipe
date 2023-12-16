@@ -7,40 +7,40 @@
     android:padding="30px">
 
     <TextView
-        android:text="Add new recipe"
+        android:text="Update your details"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
-        android:id="@+id/etRecipeName"
+        android:id="@+id/etJourney"
         android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Recipe Name"
+        android:hint="Culinary journey"
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/etIngredients"
+        android:id="@+id/etFavRecipes"
         android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingredients"
+        android:hint="Favorite recipes"
         android:minHeight="48dp"
          />
 
     <EditText
-        android:id="@+id/etInstruction"
+        android:id="@+id/etFoodPhilosophy"
         android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Instruction"
+        android:hint="Food philosophy"
         android:minHeight="48dp" />
 
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnSave"
         android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add"/>
+        android:text="Save"/>
 </LinearLayout>

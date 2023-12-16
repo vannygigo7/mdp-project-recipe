@@ -14,16 +14,94 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="30dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/profile"
+            android:layout_marginVertical="10dp"
             android:background="@drawable/circular_background"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10sp"
             android:text="Sangvaleap Vanny" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_marginTop="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Culinary Journey: "
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/tvJourney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add your culinary journey..."/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_marginTop="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favorite Recipes: "
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/tvFavRecipes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add your favorite recipes..."/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_marginTop="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food philosophy: "
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/tvFoodPhilosophy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add your food philosophy..."/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:text="Logout"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

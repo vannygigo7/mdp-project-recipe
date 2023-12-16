@@ -7,25 +7,27 @@
     >
 
     <TextView
-        android:text="Add meal plan"
+        android:text="Add blog post"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
-        android:id="@+id/etDay"
+        android:id="@+id/etCaption"
         android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Day"
+        android:hint="Caption"
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/etMeal"
+        android:id="@+id/etContent"
         android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Meal"
+        android:hint="Content"
+        android:inputType="textMultiLine"
+        android:minLines="3"
         android:minHeight="48dp" />
 
     <Button
