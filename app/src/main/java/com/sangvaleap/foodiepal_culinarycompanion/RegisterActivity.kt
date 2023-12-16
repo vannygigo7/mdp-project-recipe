@@ -8,6 +8,7 @@ import com.google.gson.Gson
 import com.sangvaleap.foodiepal_culinarycompanion.databinding.ActivityRegisterBinding
 import com.sangvaleap.foodiepal_culinarycompanion.model.User
 import com.sangvaleap.foodiepal_culinarycompanion.utils.AppConstants
+
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
