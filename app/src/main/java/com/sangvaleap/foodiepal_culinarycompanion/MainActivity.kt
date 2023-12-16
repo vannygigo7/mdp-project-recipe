@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.vpager.adapter = MyPageAdapter(this)
         binding.tlayout.tabGravity = TabLayout.GRAVITY_FILL
         TabLayoutMediator(binding.tlayout, binding.vpager){
